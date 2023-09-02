@@ -587,8 +587,8 @@
     </div>
 </section>
     <section id="information">
-    <h2>Información de Contacto</h2>
-    <form action="#" method="POST">
+    <h2>Información de Contacto y Pago</h2>
+    <form action="#" method="POST" id="payment-form">
         <label for="nombre">Nombre Completo:</label>
         <input type="text" id="nombre" name="nombre" required>
 
@@ -601,14 +601,21 @@
         <label for="dni">DNI:</label>
         <input type="text" id="dni" name="dni" required>
 
+        
+
+        <div id="card-element">
+            <!-- Un elemento donde se insertará el formulario de tarjeta de crédito de Stripe -->
+        </div>
+
+        <div id="card-errors" role="alert"></div>
         <label>
             <input type="checkbox" id="aceptar" name="aceptar" required>
             Aceptar las políticas de la Empresa
         </label>
-
-        <button type="submit" class="btn-reservar">Reservar Ahora</button>
+        <button type="submit" class="btn-reservar" style="width: 90%; margin: 0 auto;">Reservar Ahora</button>
     </form>
 </section>
+
 
     <section id="about">
         <h2>Acerca de nosotros</h2>
@@ -646,6 +653,7 @@
         <h4><span id="cliente">Ana</span> acaba de reservar <span id="numeroTickets">2</span>cumpleaños 🎉🥳</h4>
         <img src="https://cf.ecommercebusinessclub.com/hosted/images/03/3dbafc2e424a4e91c7038740ba33f6/ENTRADAS-ebl.png" style="width: 50px">
     </div>
+    <script src="https://js.stripe.com/v3/"></script>
     <script>
         let currentSlide = 0;
         const slides = [
@@ -694,10 +702,10 @@ const ofertaTicketsSpan = document.getElementById("ofertaTickets"); // Nuevo ele
         
 
 const notifications = [
-    { cliente: "Ana", numeroTickets: "2" },
-    { cliente: "Michel", numeroTickets: "4" },
-    { cliente: "Myriam", numeroTickets: "3" },
-    { cliente: "David", numeroTickets: "2" }
+    { cliente: "Ana", numeroTickets: "1" },
+    { cliente: "Michel", numeroTickets: "1" },
+    { cliente: "Myriam", numeroTickets: "1" },
+    { cliente: "David", numeroTickets: "1" }
 ];
 const progressBar = document.getElementById('progressBar');
 const progressBarContainer = document.querySelector('.progress-bar-container');
@@ -730,6 +738,51 @@ function updateNotification() {
 
 updateNotification(); // Llamarlo inmediatamente al cargar la página
 setInterval(updateNotification, 60000);
+
+// Configurar Stripe
+    const stripe = Stripe('TU_CLAVE_PUBLICA_DE_STRIPE');
+    const elements = stripe.elements();
+
+    // Crear un elemento de tarjeta de crédito de Stripe
+    const cardElement = elements.create('card');
+
+    // Montar el elemento de tarjeta de crédito en el formulario
+    cardElement.mount('#card-element');
+
+    // Manejar errores de tarjeta de crédito en tiempo real
+    cardElement.on('change', function(event) {
+        const displayError = document.getElementById('card-errors');
+        if (event.error) {
+            displayError.textContent = event.error.message;
+        } else {
+            displayError.textContent = '';
+        }
+    });
+
+    // Manejar envío del formulario
+    const form = document.getElementById('payment-form');
+    form.addEventListener('submit', async function(event) {
+        event.preventDefault();
+
+        // Deshabilitar el botón de envío mientras se procesa la tarjeta
+        form.querySelector('button').disabled = true;
+
+        // Crear un token de tarjeta de crédito usando Stripe.js
+        const { token, error } = await stripe.createToken(cardElement);
+
+        // Manejar errores
+        if (error) {
+            const errorElement = document.getElementById('card-errors');
+            errorElement.textContent = error.message;
+            form.querySelector('button').disabled = false;
+        } else {
+            // Aquí puedes enviar el token de tarjeta de crédito y otros datos al servidor para completar la transacción
+            // Por ejemplo, puedes usar Fetch API o axios para enviar los datos al servidor
+
+            // Luego redirige al usuario a una página de confirmación o muestra un mensaje de éxito
+            alert('Pago exitoso');
+        }
+    });
 
 
     </script>
