@@ -211,7 +211,7 @@ color: white;
 }
 
 /* Estilos para los botones de suma y resta */
-.checkeable span {
+.complementos span {
     font-size: 15px; /* Cambia el tamaño de fuente */
     margin: 0 5px;
     cursor: pointer;
@@ -222,7 +222,7 @@ color: white;
 }
 
 .checkeable input[type="number"] {
-    width: 30px;
+    width: 20px;
     text-align: center;
     border: none;
     outline: none;
@@ -384,12 +384,14 @@ input[type="number"]::-webkit-outer-spin-button {
 <section id="complementos">
     <h2>Complementos</h2>
     <div class="complemento">
-        <label class="checkeable">
+       <div class="complemento-box">
+            <label class="checkeable">
             <input type="checkbox">
             <img src="icono1.png" style="width: 100px;">
         </label>
-        <p>Bolsa de Hielo</p>
+        <p>Bolsa de Hielo</p><br>
         <span id="sumar">+</span><input type="number" min="0"><span id="restar">-</span>
+       </div>
     </div>
      <div class="complemento">
         <label class="checkeable">
