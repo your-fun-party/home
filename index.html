@@ -203,6 +203,69 @@
             outline: none;
         }
 
+
+          #tartas {
+        padding: 20px;
+        background-color: #fff;
+        margin-bottom: 20px;
+    }
+
+    #tartas h2 {
+        font-size: 24px;
+        margin: 0 0 20px 0;
+    }
+
+    .productos {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .producto {
+        width: calc(33.33% - 20px);
+        background-color: #f0f0f0;
+        padding: 20px;
+        margin-bottom: 20px;
+        text-align: center;
+        border-radius: 5px;
+    }
+
+    .producto img {
+        max-width: 100%;
+        border-radius: 5px;
+    }
+
+    .producto h3 {
+        font-size: 18px;
+        margin: 10px 0;
+    }
+
+    .producto p {
+        font-size: 14px;
+        margin: 0 0 10px 0;
+    }
+
+    .precio {
+        font-weight: bold;
+        font-size: 16px;
+        color: #ff5722;
+    }
+
+    .agregar {
+        background-color: #ff5722;
+        color: #fff;
+        padding: 8px 16px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+    }
+
+    .agregar:hover {
+        background-color: #e64a19;
+    }
+
         .image-gallery {
             display: flex;
             flex-wrap: wrap;
@@ -375,7 +438,26 @@
         </div>
     </div>
 </section>
-
+<section id="tartas">
+    <h2>Tartas</h2>
+    <div class="productos">
+        <div class="producto">
+            <img src="tarta1.jpg" alt="Tarta 1">
+            <h3>Tarta de Chocolate</h3>
+            <p>Deliciosa tarta de chocolate.</p>
+            <span class="precio">$10.00</span>
+            <button class="agregar">Agregar</button>
+        </div>
+        <div class="producto">
+            <img src="tarta2.jpg" alt="Tarta 2">
+            <h3>Tarta de Fresa</h3>
+            <p>Tarta fresca de fresa.</p>
+            <span class="precio">$12.00</span>
+            <button class="agregar">Agregar</button>
+        </div>
+        <!-- Agrega más productos aquí si es necesario -->
+    </div>
+</section>
     <section id="about">
         <h2>Acerca de nosotros</h2>
         <p>Somos un emocionante parque de bolas diseñado para brindar diversión y entretenimiento a personas de todas las edades.</p>
