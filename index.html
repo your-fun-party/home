@@ -381,29 +381,19 @@ color: white;
         <label class="checkeable">
             <input type="checkbox">
             <img src="icono1.png" style="width: 100px;">
-            <p>Bolsa de Hielo</p>
-            <span id="sumar">+</span><input type="number" min="0"><span id="restar">-</span>
         </label>
+        <p>Bolsa de Hielo</p>
+        <span id="sumar">+</span><input type="number" min="0"><span id="restar">-</span>
     </div>
-    <div class="complemento">
+     <div class="complemento">
         <label class="checkeable">
             <input type="checkbox">
             <img src="icono1.png" style="width: 100px;">
-            <p>Bolsa de Hielo</p>
-            <span id="sumar">+</span><input type="number" min="0"><span id="restar">-</span>
         </label>
-    </div>
-    <div class="complemento">
-        <label class="checkeable">
-            <input type="checkbox">
-            <img src="icono1.png" style="width: 100px;">
-            <p>Bolsa de Hielo</p>
-            <span id="sumar">+</span><input type="number" min="0"><span id="restar">-</span>
-        </label>
+        <p>Bolsa de Hielo</p>
+        <span id="sumar">+</span><input type="number" min="0"><span id="restar">-</span>
     </div>
 </section>
-
-
     <section id="about">
         <h2>Acerca de nosotros</h2>
         <p>Somos un emocionante parque de bolas diseñado para brindar diversión y entretenimiento a personas de todas las edades.</p>
@@ -461,6 +451,37 @@ color: white;
 
         // Cambiar la imagen cada 8 segundos (8000 milisegundos)
         setInterval(changeSlide, 8000);
+
+
+
+
+         // Obtener todos los elementos con la clase "complemento"
+    const complementos = document.querySelectorAll('.complemento');
+
+    // Agregar evento click a los botones de suma y resta
+    complementos.forEach(complemento => {
+        const sumarBtn = complemento.querySelector('.sumar');
+        const restarBtn = complemento.querySelector('.restar');
+        const input = complemento.querySelector('input[type="number"]');
+
+        sumarBtn.addEventListener('click', () => {
+            // Obtener el valor actual del input y sumar 1
+            let valor = parseInt(input.value) || 0;
+            valor += 1;
+
+            // Actualizar el valor del input
+            input.value = valor;
+        });
+
+        restarBtn.addEventListener('click', () => {
+            // Obtener el valor actual del input y restar 1, asegurando que no sea menor que 0
+            let valor = parseInt(input.value) || 0;
+            valor = Math.max(0, valor - 1);
+
+            // Actualizar el valor del input
+            input.value = valor;
+        });
+    });
     </script>
 </body>
 </html>
