@@ -42,6 +42,36 @@
             font-weight: bold;
         }
 
+        /* Estilos para la sección slider */
+        .slider {
+            position: relative;
+            height: 400px; /* Ajusta la altura según tus necesidades */
+            background-image: url('slider-image.jpg'); /* Reemplaza 'slider-image.jpg' con la URL de tu imagen de fondo */
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Estilos para la capa oscura semi-transparente */
+        .capa {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Ajusta el último valor (0.5) para controlar la opacidad */
+        }
+
+        /* Estilos para el texto en la sección slider */
+        .slider h1 {
+            font-size: 36px;
+            margin: 0;
+        }
+
         /* Estilos para las secciones */
         section {
             padding: 40px;
@@ -87,7 +117,10 @@
             </ul>
         </nav>
     </header>
-
+ <section class="slider">
+        <h1>Your Fun Party</h1>
+        <div class="capa" id="capa"></div>
+    </section>
     <section id="about">
         <h2>Acerca de nosotros</h2>
         <p>Somos un emocionante parque de bolas diseñado para brindar diversión y entretenimiento a personas de todas las edades.</p>
