@@ -228,7 +228,13 @@ color: white;
     outline: none;
 }
 
-    
+    /* Estilos para ocultar las flechas del input number */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
+}
 
         /* Estilos para la galería de imágenes */
         .image-gallery {
