@@ -165,6 +165,7 @@ color: white;
 }
 
         /* Estilos para la sección de complementos */
+/* Estilos para la sección de complementos */
 #complementos {
     background-color: #fff;
     padding: 20px;
@@ -179,35 +180,53 @@ color: white;
     text-align: center;
 }
 
-/* Estilos para los div de complementos */
+/* Estilos para los divs de complementos */
 .complemento {
-    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
 }
 
 /* Estilos para el checkbox personalizado */
 .checkeable {
-    position: relative;
     cursor: pointer;
+    display: flex;
+    align-items: center;
 }
 
 .checkeable input[type="checkbox"] {
     display: none;
 }
 
-.checkeable i {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 16px;
-    height: 16px;
-    border: 2px solid grey; /* Establece el borde gris predeterminado */
-    border-radius: 3px;
+/* Estilos para la imagen */
+.checkeable img {
+    width: 100px;
+    margin-right: 20px;
 }
 
-.checkeable input[type="checkbox"]:checked + i {
-    border: 2px solid orange; /* Cambia el borde a naranja cuando está marcado */
+/* Estilos para el texto */
+.checkeable p {
+    font-size: 18px;
+    margin-right: 20px;
 }
 
+/* Estilos para los botones de suma y resta */
+.checkeable span {
+    font-size: 24px;
+    margin: 0 5px;
+    cursor: pointer;
+    user-select: none;
+    background: orange;
+    border-radius: 30px;
+    padding: 5px;
+}
+
+.checkeable input[type="number"] {
+    width: 30px;
+    text-align: center;
+    border: none;
+    outline: none;
+}
 
     
 
@@ -361,40 +380,29 @@ color: white;
     <div class="complemento">
         <label class="checkeable">
             <input type="checkbox">
-            <i></i> Complemento 1
+            <img src="icono1.png" style="width: 100px;">
+            <p>Bolsa de Hielo</p>
+            <span id="sumar">+</span><input type="number" min="0"><span id="restar">-</span>
         </label>
     </div>
     <div class="complemento">
         <label class="checkeable">
             <input type="checkbox">
-            <i></i> Complemento 2
+            <img src="icono1.png" style="width: 100px;">
+            <p>Bolsa de Hielo</p>
+            <span id="sumar">+</span><input type="number" min="0"><span id="restar">-</span>
         </label>
     </div>
     <div class="complemento">
         <label class="checkeable">
             <input type="checkbox">
-            <i></i> Complemento 3
-        </label>
-    </div>
-    <div class="complemento">
-        <label class="checkeable">
-            <input type="checkbox">
-            <i></i> Complemento 4
-        </label>
-    </div>
-    <div class="complemento">
-        <label class="checkeable">
-            <input type="checkbox">
-            <i></i> Complemento 5
-        </label>
-    </div>
-    <div class="complemento">
-        <label class="checkeable">
-            <input type="checkbox">
-            <i></i> Complemento 6
+            <img src="icono1.png" style="width: 100px;">
+            <p>Bolsa de Hielo</p>
+            <span id="sumar">+</span><input type="number" min="0"><span id="restar">-</span>
         </label>
     </div>
 </section>
+
 
     <section id="about">
         <h2>Acerca de nosotros</h2>
