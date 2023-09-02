@@ -46,7 +46,6 @@
         .slider {
             position: relative;
             height: 400px; /* Ajusta la altura según tus necesidades */
-            background-image: url('yourslide.png'); /* Reemplaza 'slider-image.jpg' con la URL de tu imagen de fondo */
             background-size: cover;
             background-position: center;
             color: #fff;
@@ -55,7 +54,6 @@
             align-items: center;
             justify-content: center;
         }
-
         /* Estilos para la capa oscura semi-transparente */
         .capa {
             position: absolute;
@@ -70,6 +68,7 @@
         .slider h1 {
             font-size: 36px;
             margin: 0;
+            z-index: 2;
         }
 
         /* Estilos para las secciones */
@@ -158,5 +157,25 @@
     <footer>
         <p>&copy; 2023 Your Fun Party</p>
     </footer>
+
+    <script>
+        // Cambiar slider
+        let currentSlide = 0;
+        const slides = [
+            'yourslide.png', // Reemplaza con el nombre de tu imagen 1
+            'yourslide2.png', // Reemplaza con el nombre de tu imagen 2
+            'yourslide3.png'  // Reemplaza con el nombre de tu imagen 3
+        ];
+
+        // Función para cambiar la imagen del slider
+        function changeSlide() {
+            const slider = document.querySelector('.slider');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slider.style.backgroundImage = `url('${slides[currentSlide]}')`;
+        }
+
+        // Cambiar la imagen cada 8 segundos (8000 milisegundos)
+        setInterval(changeSlide, 8000);
+    </script>
 </body>
 </html>
