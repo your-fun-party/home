@@ -5,19 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Fun Party - Parque de Bolas</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Butterfly+Kids&family=Varela+Round&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Butterfly+Kids&family=Varela+Round&display=swap" rel="stylesheet">
     <style>
-        /* Estilos para el cuerpo de la página */
         body {
-            
             font-family: 'Varela Round', sans-serif;
             background-color: #f0f0f0;
             margin: 0;
             padding: 0;
         }
 
-        /* Estilos para el encabezado */
         header {
             background-color: #FDF3DD;
             color: black;
@@ -46,10 +43,9 @@
             font-weight: bold;
         }
 
-        /* Estilos para la sección slider */
         .slider {
             position: relative;
-            height: 400px; /* Ajusta la altura según tus necesidades */
+            height: 400px;
             background-image: url('yourslide.png');
             background-size: cover;
             background-position: center;
@@ -60,17 +56,16 @@
             justify-content: center;
             flex-direction: column;
         }
-        /* Estilos para la capa oscura semi-transparente */
+
         .capa {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.5); /* Ajusta el último valor (0.5) para controlar la opacidad */
+            background-color: rgba(0, 0, 0, 0.5);
         }
 
-        /* Estilos para el texto en la sección slider */
         .slider h1 {
             font-size: 36px;
             margin: 0;
@@ -78,7 +73,6 @@
             font-family: 'Butterfly Kids', cursive;
         }
 
-        /* Estilos para las secciones */
         section {
             padding: 40px;
             background-color: #fff;
@@ -90,157 +84,140 @@
             margin: 0 0 20px 0;
         }
 
-        /* Estilos para el botón "Reserva Ahora" */
-.btn-reserva {
-    display: inline-block;
-    background-color: #ff5722; /* Cambia el color de fondo a tu preferencia */
-    color: #fff;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    transition: background-color 0.3s ease; /* Agregar una transición suave */
-    z-index: 2;
-}
+        .btn-reserva {
+            display: inline-block;
+            background-color: #ff5722;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            z-index: 2;
+        }
 
-.btn-reserva:hover {
-    background-color: #e64a19; /* Cambia el color de fondo al pasar el cursor sobre el botón */
-}
+        .btn-reserva:hover {
+            background-color: #e64a19;
+        }
 
-        /* Estilos para la sección de calendario */
-#calendar {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-}
+        #calendar {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
 
-#calendar h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
-    text-align: center;
-}
+        #calendar h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
 
-/* Estilos para la tabla de calendario */
-table {
-    width: 100%;
-    border-collapse: collapse;
-}
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
 
-table th,
-table td {
-    padding: 10px;
-    text-align: center;
-}
+        table th,
+        table td {
+            padding: 10px;
+            text-align: center;
+        }
 
-table th {
-    background-color: #333;
-    color: #fff;
-}
+        table th {
+            background-color: #333;
+            color: #fff;
+        }
 
-table td {
-    border: 1px solid #ccc;
-    cursor: pointer;
-}
+        table td {
+            border: 1px solid #ccc;
+            cursor: pointer;
+        }
 
         table td:hover {
-    border: 1px solid #ccc;
-background: orange;
-color: white;
-}
+            border: 1px solid #ccc;
+            background: orange;
+            color: white;
+        }
 
         #hour {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-}
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
 
-#hour h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
-    text-align: center;
-}
+        #hour h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
 
-        /* Estilos para la sección de complementos */
-/* Estilos para la sección de complementos */
-#complementos {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-}
+        #complementos {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
 
-#complementos h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
-    text-align: center;
-}
+        #complementos h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
 
-/* Estilos para los divs de complementos */
-.complemento {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-}
+        .complemento {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
 
-/* Estilos para el checkbox personalizado */
-.checkeable {
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-}
+        .checkeable {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
 
-.checkeable input[type="checkbox"] {
-    display: none;
-}
+        .checkeable input[type="checkbox"] {
+            display: none;
+        }
 
-/* Estilos para la imagen */
-.checkeable img {
-    width: 100px;
-    margin-right: 20px;
-}
+        .checkeable img {
+            width: 100px;
+            margin-right: 20px;
+        }
 
-/* Estilos para el texto */
-.checkeable p {
-    font-size: 18px;
-    margin-right: 20px;
-}
+        .checkeable p {
+            font-size: 18px;
+            margin-right: 20px;
+        }
 
-/* Estilos para los botones de suma y resta */
-.complementos span {
-    font-size: 15px; /* Cambia el tamaño de fuente */
-    margin: 0 5px;
-    cursor: pointer;
-    user-select: none;
-    background: orange;
-    border-radius: 30px;
-    padding: 8px; /* Ajusta el padding */
-}
+        .complementos span#sumar,
+        .complementos span#restar {
+            font-size: 15px;
+            margin: 0 5px;
+            cursor: pointer;
+            user-select: none;
+            background: orange;
+            border-radius: 30px;
+            padding: 8px;
+            color: white;
+        }
 
-.checkeable input[type="number"] {
-    width: 20px;
-    text-align: center;
-    border: none;
-    outline: none;
-}
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            appearance: none;
+            margin: 0;
+            width: 20px;
+            text-align: center;
+            border: none;
+            outline: none;
+        }
 
-    /* Estilos para ocultar las flechas del input number */
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    appearance: none;
-    margin: 0;
-    width: 20px;
-    text-align: center;
-    border: none;
-    outline: none;
-}
-
-        /* Estilos para la galería de imágenes */
         .image-gallery {
             display: flex;
             flex-wrap: wrap;
@@ -252,7 +229,6 @@ input[type="number"]::-webkit-outer-spin-button {
             margin-bottom: 20px;
         }
 
-        /* Estilos para el pie de página */
         footer {
             background-color: #333;
             color: #fff;
@@ -273,144 +249,145 @@ input[type="number"]::-webkit-outer-spin-button {
             </ul>
         </nav>
     </header>
-<section class="slider">
-    <h1>Your Fun Party</h1>
-    <p style="z-index: 2;">Bienvenido a la fiesta más divertida de la ciudad</p>
-    <a href="#reservation" class="btn-reserva">Reserva Ahora</a>
-    <div class="capa" id="capa"></div>
-</section>
+    <section class="slider">
+        <h1>Your Fun Party</h1>
+        <p style="z-index: 2;">Bienvenido a la fiesta más divertida de la ciudad</p>
+        <a href="#reservation" class="btn-reserva">Reserva Ahora</a>
+        <div class="capa" id="capa"></div>
+    </section>
     <section id="calendar">
-    <h2>Calendario</h2>
-    <table>
-        <thead>
-            <tr>
-                <th>Lunes</th>
-                <th>Martes</th>
-                <th>Miércoles</th>
-                <th>Jueves</th>
-                <th>Viernes</th>
-                <th>Sábado</th>
-                <th>Domingo</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td>1</td>
-                <td>2</td>
-                <td>3</td>
-            </tr>
-            <tr>
-                <td>4</td>
-                <td>5</td>
-                <td>6</td>
-                <td>7</td>
-                <td>8</td>
-                <td>9</td>
-                <td>10</td>
-            </tr>
-              <tr>
-                <td>11</td>
-                <td>12</td>
-                <td>13</td>
-                <td>14</td>
-                <td>15</td>
-                <td>16</td>
-                <td>17</td>
-            </tr>
-             <tr>
-                <td>18</td>
-                <td>19</td>
-                <td>20</td>
-                <td>21</td>
-                <td>22</td>
-                <td>23</td>
-                <td>24</td>
-            </tr>
-            <tr>
-                <td>25</td>
-                <td>26</td>
-                <td>27</td>
-                <td>28</td>
-                <td>29</td>
-                <td>30</td>
-                <td>-</td>
-            </tr>
-        </tbody>
-    </table>
+        <h2>Calendario</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Lunes</th>
+                    <th>Martes</th>
+                    <th>Miércoles</th>
+                    <th>Jueves</th>
+                    <th>Viernes</th>
+                    <th>Sábado</th>
+                    <th>Domingo</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>6</td>
+                    <td>7</td>
+                    <td>8</td>
+                    <td>9</td>
+                    <td>10</td>
+                </tr>
+                <tr>
+                    <td>11</td>
+                    <td>12</td>
+                    <td>13</td>
+                    <td>14</td>
+                    <td>15</td>
+                    <td>16</td>
+                    <td>17</td>
+                </tr>
+                <tr>
+                    <td>18</td>
+                    <td>19</td>
+                    <td>20</td>
+                    <td>21</td>
+                    <td>22</td>
+                    <td>23</td>
+                    <td>24</td>
+                </tr>
+                <tr>
+                    <td>25</td>
+                    <td>26</td>
+                    <td>27</td>
+                    <td>28</td>
+                    <td>29</td>
+                    <td>30</td>
+                    <td>-</td>
+                </tr>
+            </tbody>
+        </table>
         <div class="legenda" style="margin: 50px;">
             <span class="ocupado" style="background:orange; padding: 5px; border-radius: 30px; color: white;">Ocupado</span><br><br>
             <span class="seleccion" style="background:green; padding: 5px; border-radius: 30px; color: white;">Selección</span>
         </div>
-</section>
-<section id="hour">
-    <h2>Horario</h2>
-    <table>
-        <thead>
-            <tr>
-                <th>Mañana</th>
-                <th>Mediodía</th>
-                <th>Tarde</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>9:00</td>
-                <td>13:00</td>
-                <td>17:00</td>
-            </tr>
-            <tr>
-                <td>10:00</td>
-                <td>14:00</td>
-                <td>18:00</td>
-            </tr>
-            <tr>
-                <td>11:00</td>
-                <td>15:00</td>
-                <td>19:00</td>
-            </tr>
-            <tr>
-                <td>12:00</td>
-                <td>16:00</td>
-                <td>20:00</td>
-            </tr>
-                                    <tr>
-                <td></td>
-                <td></td>
-                <td>21:00</td>
-            </tr>
-        </tbody>
-    </table>
-</section>
-<section id="complementos">
-    <h2>Complementos</h2>
-    <div class="complemento">
-       <div class="complemento-box">
+    </section>
+    <section id="hour">
+        <h2>Horario</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Mañana</th>
+                    <th>Mediodía</th>
+                    <th>Tarde</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>9:00</td>
+                    <td>13:00</td>
+                    <td>17:00</td>
+                </tr>
+                <tr>
+                    <td>10:00</td>
+                    <td>14:00</td>
+                    <td>18:00</td>
+                </tr>
+                <tr>
+                    <td>11:00</td>
+                    <td>15:00</td>
+                    <td>19:00</td>
+                </tr>
+                <tr>
+                    <td>12:00</td>
+                    <td>16:00</td>
+                    <td>20:00</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>21:00</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    <section id="complementos">
+        <h2>Complementos</h2>
+        <div class="complemento">
             <label class="checkeable">
-            <input type="checkbox">
-            <img src="icono1.png" style="width: 100px;">
-        </label>
-        <p>Bolsa de Hielo</p><br>
-        <span id="sumar">+</span><input type="number" min="0"><span id="restar">-</span>
-       </div>
-    </div>
-     <div class="complemento">
-        <label class="checkeable">
-            <input type="checkbox">
-            <img src="icono1.png" style="width: 100px;">
-        </label>
-        <p>Bolsa de Hielo</p>
-        <span id="sumar">+</span><input type="number" min="0"><span id="restar">-</span>
-    </div>
-</section>
+                <input type="checkbox">
+                <img src="icono1.png" alt="Icono">
+                <p>Bolsa de Hielo</p>
+                <span id="sumar">+</span>
+                <input type="number" min="0">
+                <span id="restar">-</span>
+            </label>
+        </div>
+        <div class="complemento">
+            <label class="checkeable">
+                <input type="checkbox">
+                <img src="icono1.png" alt="Icono">
+                <p>Bolsa de Hielo</p>
+                <span id="sumar">+</span>
+                <input type="number" min="0">
+                <span id="restar">-</span>
+            </label>
+        </div>
+    </section>
     <section id="about">
         <h2>Acerca de nosotros</h2>
         <p>Somos un emocionante parque de bolas diseñado para brindar diversión y entretenimiento a personas de todas las edades.</p>
     </section>
-
     <section id="services">
         <h2>Servicios</h2>
         <ul>
@@ -420,17 +397,14 @@ input[type="number"]::-webkit-outer-spin-button {
             <li>Cafetería y merienda</li>
         </ul>
     </section>
-
     <section id="gallery">
         <h2>Galería</h2>
         <div class="image-gallery">
-            <!-- Aquí puedes incluir imágenes de tus instalaciones -->
             <img src="image1.jpg" alt="Imagen 1">
             <img src="image2.jpg" alt="Imagen 2">
             <img src="image3.jpg" alt="Imagen 3">
         </div>
     </section>
-
     <section id="contact">
         <h2>Contacto</h2>
         <address>
@@ -439,69 +413,54 @@ input[type="number"]::-webkit-outer-spin-button {
             <p>Correo Electrónico: info@yourfunparty.com</p>
         </address>
     </section>
-
     <footer>
         <p>&copy; 2023 Your Fun Party</p>
     </footer>
+    <script>
+        let currentSlide = 0;
+        const slides = [
+            'yourslide2.png',
+            'yourslide3.png',
+            'yourslide4.png',
+            'yourslide5.png'
+        ];
 
-  <script>
-    // Cambiar slider
-    let currentSlide = 0;
-    const slides = [
-        'yourslide2.png',
-        'yourslide3.png',
-        'yourslide4.png',
-        'yourslide5.png'
-    ];
+        function changeSlide() {
+            const slider = document.querySelector('.slider');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slider.style.backgroundImage = `url('${slides[currentSlide]}')`;
+        }
 
-    // Función para cambiar la imagen del slider
-    function changeSlide() {
-        const slider = document.querySelector('.slider');
-        currentSlide = (currentSlide + 1) % slides.length;
-        slider.style.backgroundImage = `url('${slides[currentSlide]}')`;
-    }
+        setInterval(changeSlide, 8000);
 
-    // Cambiar la imagen cada 8 segundos (8000 milisegundos)
-    setInterval(changeSlide, 8000);
+        const complementos = document.querySelectorAll('.complemento');
 
-    // Obtener todos los elementos con la clase "complemento"
-    const complementos = document.querySelectorAll('.complemento');
+        complementos.forEach(complemento => {
+            const sumarBtn = complemento.querySelector('#sumar');
+            const restarBtn = complemento.querySelector('#restar');
+            const input = complemento.querySelector('input[type="number"]');
+            const checkbox = complemento.querySelector('input[type="checkbox"]');
 
-    // Agregar evento click a los botones de suma y resta
-    complementos.forEach(complemento => {
-        const sumarBtn = complemento.querySelector('#sumar');
-        const restarBtn = complemento.querySelector('#restar');
-        const input = complemento.querySelector('input[type="number"]');
-        const checkbox = complemento.querySelector('input[type="checkbox"]');
+            sumarBtn.addEventListener('click', () => {
+                let valor = parseInt(input.value) || 0;
+                valor += 1;
+                input.value = valor;
+            });
 
-        sumarBtn.addEventListener('click', () => {
-            // Obtener el valor actual del input y sumar 1
-            let valor = parseInt(input.value) || 0;
-            valor += 1;
+            restarBtn.addEventListener('click', () => {
+                let valor = parseInt(input.value) || 0;
+                valor = Math.max(0, valor - 1);
+                input.value = valor;
+            });
 
-            // Actualizar el valor del input
-            input.value = valor;
+            checkbox.addEventListener('change', () => {
+                if (checkbox.checked) {
+                    input.style.border = '2px solid orange';
+                } else {
+                    input.style.border = '2px solid grey';
+                }
+            });
         });
-
-        restarBtn.addEventListener('click', () => {
-            // Obtener el valor actual del input y restar 1, asegurando que no sea menor que 0
-            let valor = parseInt(input.value) || 0;
-            valor = Math.max(0, valor - 1);
-
-            // Actualizar el valor del input
-            input.value = valor;
-        });
-
-        // Agregar evento change al checkbox para cambiar el borde
-        checkbox.addEventListener('change', () => {
-            if (checkbox.checked) {
-                input.style.border = '2px solid orange';
-            } else {
-                input.style.border = '2px solid grey';
-            }
-        });
-    });
-</script>
-
+    </script>
 </body>
 </html>
