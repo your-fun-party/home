@@ -346,35 +346,36 @@
             </tbody>
         </table>
     </section>
-    <section class="complementos">
-        <h2>Complementos</h2>
-        <div id="complementos">
-            <div class="complemento">
-                <label class="checkeable">
-                    <input type="checkbox">
-                    <img src="icono1.png" alt="Icono">
-                </label>
-                <div class="unidades">
-                 <p>Bolsa de Hielo</p>
-                    <buttom id="sumar" style="background: orange;padding: 8px; border-radius: 50%; font-size: 15px; cursor: pointer;">+</buttom>
-                    <input type="number" min="0" style="width:35px">
-                    <buttom id="restar" style="background: orange;padding: 8px; border-radius: 50%; font-size: 15px; cursor: pointer;">-</buttom>
-                </div>
+  <section class="complementos">
+    <h2>Complementos</h2>
+    <div id="complementos">
+        <div class="complemento">
+            <label class="checkeable">
+                <input type="checkbox">
+                <img src="icono1.png" alt="Icono">
+            </label>
+            <div class="unidades">
+                <p>Bolsa de Hielo</p>
+                <button class="sumar" style="background: orange;padding: 8px; border-radius: 50%; font-size: 15px; cursor: pointer;">+</button>
+                <input type="number" min="0" style="width:35px">
+                <button class="restar" style="background: orange;padding: 8px; border-radius: 50%; font-size: 15px; cursor: pointer;">-</button>
             </div>
-          <div class="complemento">
-                <label class="checkeable">
-                    <input type="checkbox">
-                    <img src="icono1.png" alt="Icono">
-                </label>
-                <div class="unidades">
-                 <p>Bolsa de Hielo</p>
-                    <buttom id="sumar" style="background: orange;padding: 8px; border-radius: 50%; font-size: 15px; cursor: pointer;">+</buttom>
-                    <input type="number" min="0" style="width:35px">
-                    <buttom id="restar" style="background: orange;padding: 8px; border-radius: 50%; font-size: 15px; cursor: pointer;">-</buttom>
-                </div>
+        </div>
+        <div class="complemento">
+            <label class="checkeable">
+                <input type="checkbox">
+                <img src="icono1.png" alt="Icono">
+            </label>
+            <div class="unidades">
+                <p>Bolsa de Hielo</p>
+                <button class="sumar" style="background: orange;padding: 8px; border-radius: 50%; font-size: 15px; cursor: pointer;">+</button>
+                <input type="number" min="0" style="width:35px">
+                <button class="restar" style="background: orange;padding: 8px; border-radius: 50%; font-size: 15px; cursor: pointer;">-</button>
             </div>
+        </div>
     </div>
-    </section>
+</section>
+
     <section id="about">
         <h2>Acerca de nosotros</h2>
         <p>Somos un emocionante parque de bolas diseñado para brindar diversión y entretenimiento a personas de todas las edades.</p>
@@ -424,26 +425,29 @@
 
         setInterval(changeSlide, 8000);
 
-        const complementos = document.querySelectorAll('.complemento');
+       document.addEventListener("DOMContentLoaded", function () {
+    const sumarBotones = document.querySelectorAll(".sumar");
+    const restarBotones = document.querySelectorAll(".restar");
 
-        complementos.forEach(complemento => {
-            const sumarBtn = complemento.querySelector('#sumar');
-            const restarBtn = complemento.querySelector('#restar');
-            const input = complemento.querySelector('input[type="number"]');
-            const checkbox = complemento.querySelector('input[type="checkbox"]');
-
-            sumarBtn.addEventListener('click', () => {
-                let valor = parseInt(input.value) || 0;
-                valor += 1;
-                input.value = valor;
-            });
-
-            restarBtn.addEventListener('click', () => {
-                let valor = parseInt(input.value) || 0;
-                valor = Math.max(0, valor - 1);
-                input.value = valor;
-            });
+    sumarBotones.forEach((boton) => {
+        boton.addEventListener("click", function () {
+            const inputNumber = this.nextElementSibling;
+            let valor = parseInt(inputNumber.value) || 0;
+            valor += 1;
+            inputNumber.value = valor;
         });
+    });
+
+    restarBotones.forEach((boton) => {
+        boton.addEventListener("click", function () {
+            const inputNumber = this.previousElementSibling;
+            let valor = parseInt(inputNumber.value) || 0;
+            valor = Math.max(0, valor - 1);
+            inputNumber.value = valor;
+        });
+    });
+});
+
     </script>
 </body>
 </html>
