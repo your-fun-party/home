@@ -575,6 +575,10 @@
     <footer>
         <p>&copy; 2023 Your Fun Party</p>
     </footer>
+    <div class="notification">
+        <h4><span id="cliente">Ana</span> acaba de reservar <span id="numeroTickets">2</span>cumpleaños 🎉🥳</h4>
+        <img src="https://cf.ecommercebusinessclub.com/hosted/images/03/3dbafc2e424a4e91c7038740ba33f6/ENTRADAS-ebl.png" style="width: 50px">
+    </div>
     <script>
         let currentSlide = 0;
         const slides = [
@@ -614,6 +618,52 @@
         });
     });
 });
+
+            const notification = document.querySelector(".notification");
+const clienteSpan = document.getElementById("cliente");
+const numeroTicketsSpan = document.getElementById("numeroTickets");
+const ofertaTicketsSpan = document.getElementById("ofertaTickets"); // Nuevo elemento agregado
+
+        
+
+const notifications = [
+    { cliente: "Ana", numeroTickets: "2" },
+    { cliente: "Michel", numeroTickets: "4" },
+    { cliente: "Myriam", numeroTickets: "3" },
+    { cliente: "David", numeroTickets: "2" }
+];
+const progressBar = document.getElementById('progressBar');
+const progressBarContainer = document.querySelector('.progress-bar-container');
+        
+let notificationIndex = 0;
+let ofertaTicketsValue = 15; // Valor inicial de los tickets
+
+function updateNotification() {
+    const { cliente, numeroTickets } = notifications[notificationIndex];
+    clienteSpan.textContent = cliente;
+    numeroTicketsSpan.textContent = numeroTickets;
+
+     const progressIncrement = 10;
+     const progressValue = (progressIncrement * (notificationIndex + 1)) + '%';
+     progressBar.style.width = progressValue;
+
+    // Disminuir el valor de ofertaTicketsValue
+    ofertaTicketsValue -= parseInt(numeroTickets);
+    ofertaTicketsSpan.textContent = ofertaTicketsValue;
+
+    notification.style.transform = "translateX(-100%)";
+    setTimeout(() => {
+        notification.style.transform = "translateX(0)";
+    }, 200);
+    setTimeout(() => {
+        notification.style.transform = "translateX(-100%)";
+    }, 4800);
+    notificationIndex = (notificationIndex + 1) % notifications.length;
+}
+
+updateNotification(); // Llamarlo inmediatamente al cargar la página
+setInterval(updateNotification, 60000);
+
 
     </script>
 </body>
