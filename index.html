@@ -58,6 +58,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            flex-direction: column;
         }
         /* Estilos para la capa oscura semi-transparente */
         .capa {
@@ -99,6 +100,7 @@
     border-radius: 5px;
     font-weight: bold;
     transition: background-color 0.3s ease; /* Agregar una transición suave */
+    z-index: 2;
 }
 
 .btn-reserva:hover {
@@ -141,7 +143,7 @@
     </header>
 <section class="slider">
     <h1>Your Fun Party</h1>
-    <p>Bienvenido a la fiesta más divertida de la ciudad</p>
+    <p style="z-index: 2;">Bienvenido a la fiesta más divertida de la ciudad</p>
     <a href="#reservation" class="btn-reserva">Reserva Ahora</a>
     <div class="capa" id="capa"></div>
 </section>
