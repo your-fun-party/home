@@ -436,6 +436,46 @@
     transition: width 0.3s;
 }
 
+        .oferta{
+            padding: 18px;
+            border: 1px solid #f8c75a;
+            background: #fbf8e5;
+            margin: 20px;
+        }
+
+        
+
+       .upsell-container {
+            position: relative;
+            display: inline-block;
+        }
+
+
+        .upsell img {
+            animation-direction: alternate;
+            animation-duration: 0.5s;
+            animation-name: move;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+
+        .upsell span {
+            font-size: 14px;
+            line-height: 1.3;
+            font-weight: 700;
+            margin-left: 10px;
+        }
+
+        @keyframes move {
+            0% {
+                transform: translateY(-50%);
+            }
+            100% {
+                transform: translateY(-50%) translateX(10px);
+            }
+        }
+
+
     </style>
 </head>
 <body>
@@ -643,6 +683,16 @@
             <input type="checkbox" id="aceptar" name="aceptar" required>
             Aceptar las políticas de la Empresa
         </label>
+        <div class="oferta">
+            <div class="upsell-container">
+                 <div class="upsell-icon"></div>
+                <div class="upsell">
+                    <img src="arrow.png" width="25"><input type="checkbox"><span>Sí, quiero usar la mochila de protección del guía</span>
+                    <p>Se trate de una mochila que llevará el guía donde podrás guardar tus pertenencias y el guía se hará cargo y te recordará que lo tienes, además tus cosas quedan seguras 24h - 72h siguientes en nuestras oficinas por sólo <span style="font-weight: bolder;">10€ extra</span></p>
+                </div>
+               
+            </div>
+        </div>
         <button type="submit" class="btn-reservar" style="width: 90%; margin: 0 auto;">Reservar Ahora</button>
     </form>
 </section>
