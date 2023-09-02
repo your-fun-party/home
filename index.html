@@ -164,6 +164,51 @@ color: white;
     text-align: center;
 }
 
+        /* Estilos para la sección de complementos */
+#complementos {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+#complementos h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Estilos para los div de complementos */
+.complemento {
+    margin-bottom: 10px;
+}
+
+/* Estilos para el checkbox personalizado */
+.checkeable {
+    position: relative;
+    cursor: pointer;
+}
+
+.checkeable input[type="checkbox"] {
+    display: none;
+}
+
+.checkeable i {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 16px;
+    height: 16px;
+    border: 2px solid grey; /* Establece el borde gris predeterminado */
+    border-radius: 3px;
+}
+
+.checkeable input[type="checkbox"]:checked + i {
+    border: 2px solid orange; /* Cambia el borde a naranja cuando está marcado */
+}
+
+
     
 
         /* Estilos para la galería de imágenes */
@@ -310,6 +355,45 @@ color: white;
             </tr>
         </tbody>
     </table>
+</section>
+<section id="complementos">
+    <h2>Complementos</h2>
+    <div class="complemento">
+        <label class="checkeable">
+            <input type="checkbox">
+            <i></i> Complemento 1
+        </label>
+    </div>
+    <div class="complemento">
+        <label class="checkeable">
+            <input type="checkbox">
+            <i></i> Complemento 2
+        </label>
+    </div>
+    <div class="complemento">
+        <label class="checkeable">
+            <input type="checkbox">
+            <i></i> Complemento 3
+        </label>
+    </div>
+    <div class="complemento">
+        <label class="checkeable">
+            <input type="checkbox">
+            <i></i> Complemento 4
+        </label>
+    </div>
+    <div class="complemento">
+        <label class="checkeable">
+            <input type="checkbox">
+            <i></i> Complemento 5
+        </label>
+    </div>
+    <div class="complemento">
+        <label class="checkeable">
+            <input type="checkbox">
+            <i></i> Complemento 6
+        </label>
+    </div>
 </section>
 
     <section id="about">
