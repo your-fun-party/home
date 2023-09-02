@@ -368,9 +368,9 @@
                 <input type="checkbox">
                 <img src="icono1.png" alt="Icono">
                 <p>Bolsa de Hielo</p>
-                <span id="sumar">+</span>
+                <span id="sumar" style="background: orange;padding: 8px; border-radius: 50%; font-size: 15px; cursor: pointer;">+</span>
                 <input type="number" min="0">
-                <span id="restar">-</span>
+                <span id="restar" style="background: orange;padding: 8px; border-radius: 50%; font-size: 15px; cursor: pointer;">-</span>
             </label>
         </div>
         <div class="complemento">
@@ -451,14 +451,6 @@
                 let valor = parseInt(input.value) || 0;
                 valor = Math.max(0, valor - 1);
                 input.value = valor;
-            });
-
-            checkbox.addEventListener('change', () => {
-                if (checkbox.checked) {
-                    input.style.border = '2px solid orange';
-                } else {
-                    input.style.border = '2px solid grey';
-                }
             });
         });
     </script>
