@@ -212,13 +212,13 @@ color: white;
 
 /* Estilos para los botones de suma y resta */
 .checkeable span {
-    font-size: 24px;
+    font-size: 15px; /* Cambia el tamaño de fuente */
     margin: 0 5px;
     cursor: pointer;
     user-select: none;
     background: orange;
     border-radius: 30px;
-    padding: 5px;
+    padding: 8px; /* Ajusta el padding */
 }
 
 .checkeable input[type="number"] {
@@ -438,37 +438,35 @@ input[type="number"]::-webkit-outer-spin-button {
         <p>&copy; 2023 Your Fun Party</p>
     </footer>
 
-    <script>
-        // Cambiar slider
-        let currentSlide = 0;
-        const slides = [
-            'yourslide2.png',
-            'yourslide3.png',
-            'yourslide4.png',
-            'yourslide5.png'
-        ];
+  <script>
+    // Cambiar slider
+    let currentSlide = 0;
+    const slides = [
+        'yourslide2.png',
+        'yourslide3.png',
+        'yourslide4.png',
+        'yourslide5.png'
+    ];
 
-        // Función para cambiar la imagen del slider
-        function changeSlide() {
-            const slider = document.querySelector('.slider');
-            currentSlide = (currentSlide + 1) % slides.length;
-            slider.style.backgroundImage = `url('${slides[currentSlide]}')`;
-        }
+    // Función para cambiar la imagen del slider
+    function changeSlide() {
+        const slider = document.querySelector('.slider');
+        currentSlide = (currentSlide + 1) % slides.length;
+        slider.style.backgroundImage = `url('${slides[currentSlide]}')`;
+    }
 
-        // Cambiar la imagen cada 8 segundos (8000 milisegundos)
-        setInterval(changeSlide, 8000);
+    // Cambiar la imagen cada 8 segundos (8000 milisegundos)
+    setInterval(changeSlide, 8000);
 
-
-
-
-         // Obtener todos los elementos con la clase "complemento"
+    // Obtener todos los elementos con la clase "complemento"
     const complementos = document.querySelectorAll('.complemento');
 
     // Agregar evento click a los botones de suma y resta
     complementos.forEach(complemento => {
-        const sumarBtn = complemento.querySelector('.sumar');
-        const restarBtn = complemento.querySelector('.restar');
+        const sumarBtn = complemento.querySelector('#sumar');
+        const restarBtn = complemento.querySelector('#restar');
         const input = complemento.querySelector('input[type="number"]');
+        const checkbox = complemento.querySelector('input[type="checkbox"]');
 
         sumarBtn.addEventListener('click', () => {
             // Obtener el valor actual del input y sumar 1
@@ -487,7 +485,17 @@ input[type="number"]::-webkit-outer-spin-button {
             // Actualizar el valor del input
             input.value = valor;
         });
+
+        // Agregar evento change al checkbox para cambiar el borde
+        checkbox.addEventListener('change', () => {
+            if (checkbox.checked) {
+                input.style.border = '2px solid orange';
+            } else {
+                input.style.border = '2px solid grey';
+            }
+        });
     });
-    </script>
+</script>
+
 </body>
 </html>
