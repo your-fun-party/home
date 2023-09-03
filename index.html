@@ -506,6 +506,57 @@
         font-size: 16px;
     }
 
+        @media screen and (max-width: 768px) {
+    /* Estilos para pantallas pequeñas (tabletas y teléfonos) */
+    body {
+        font-size: 14px;
+    }
+
+    header h1 {
+        font-size: 28px;
+    }
+
+    .slider {
+        height: 40vh;
+    }
+
+    .slider h1 {
+        font-size: 28px;
+    }
+
+    .slider p {
+        font-size: 16px;
+    }
+
+    #calendar table,
+    #hour table {
+        font-size: 12px;
+    }
+
+    .complemento,
+    .producto {
+        width: 100%; /* Ocupar todo el ancho en pantallas pequeñas */
+    }
+
+    .icon-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .icon {
+        flex-basis: calc(50% - 20px);
+        margin-bottom: 20px;
+    }
+
+    .icon img {
+        max-width: 60px;
+    }
+
+    .icon p {
+        font-size: 12px;
+    }
+}
+
     </style>
 </head>
 <body>
